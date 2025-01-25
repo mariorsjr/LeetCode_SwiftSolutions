@@ -15,7 +15,7 @@ func reverseList(_ head: ListNode?) -> ListNode? {
     return newListNode
 }
 
-// Recursive
+// Recursive - Time complexity: O(n); Space Complexity: O(n)
 func reverseList(_ head: ListNode?) -> ListNode? {
     guard let head = head, let next = head.next else {
         return head
