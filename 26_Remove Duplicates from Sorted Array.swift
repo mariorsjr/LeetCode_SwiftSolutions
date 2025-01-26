@@ -2,18 +2,19 @@
 // Solution Time complexity: O(n); Space Complexity: O(1)
 
 func removeDuplicates(_ nums: inout [Int]) -> Int {
-    var left = 0
-    var right = 1
-    var k = 1
+    var equals = 1
+    var current = 1
+    var writer = 1
     
-    while right < nums.count {
-        if nums[right] > nums[left] {
-            left += 1
-            k += 1
-            nums[left] = nums[right]
+    while current < nums.count {
+        equals = nums[current] == nums[current - 1] ? equals + 1 : 1
+        
+        if equals == 1 {
+            nums[writer] = nums[current]
+            writer += 1
         }
-        right += 1
+        current += 1
     }
     
-    return k
+    return writer
 }
